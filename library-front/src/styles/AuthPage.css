@@ -1,0 +1,372 @@
+/* Estilos para a página de autenticação */
+.auth-container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    background-color: #f8f9fa;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .auth-card {
+    width: 100%;
+    max-width: 1000px;
+    min-height: 600px;
+    background-color: #fff;
+    border-radius: 20px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    display: flex;
+    overflow: hidden;
+    position: relative;
+  }
+  
+  /* Estilos para os painéis */
+  .auth-panel {
+    width: 50%;
+    transition: transform 0.6s ease-in-out;
+  }
+  
+  /* Painel da imagem */
+  .image-panel {
+    position: relative;
+    background-image: url("https://images.unsplash.com/photo-1507842217343-583bb7270b66?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80");
+    background-size: cover;
+    background-position: center;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+  
+  .image-panel::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, rgba(76, 35, 174, 0.7), rgba(0, 123, 255, 0.7));
+  }
+  
+  .panel-content {
+    position: relative;
+    z-index: 1;
+    padding: 2rem;
+    max-width: 400px;
+  }
+  
+  .image-panel h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+  }
+  
+  .image-panel p {
+    margin-bottom: 2rem;
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+  
+  /* Botão de alternância no painel da imagem */
+  .btn-toggle {
+    background-color: transparent;
+    border: 2px solid white;
+    color: white;
+    padding: 0.75rem 2rem;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+  
+  .btn-toggle:hover {
+    background-color: white;
+    color: #4c23ae;
+  }
+  
+  /* Painel do formulário */
+  .form-panel {
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* Transição para o modo de login (imagem à esquerda, formulário à direita) */
+  .login-mode .image-panel {
+    transform: translateX(0);
+  }
+  
+  .login-mode .form-panel {
+    transform: translateX(0);
+  }
+  
+  /* Transição para o modo de registro (imagem à direita, formulário à esquerda) */
+  .register-mode .image-panel {
+    transform: translateX(100%);
+  }
+  
+  .register-mode .form-panel {
+    transform: translateX(-100%);
+  }
+  
+  /* Estilos dos formulários */
+  h2 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    color: #333;
+    font-weight: 700;
+  }
+  
+  .auth-subtitle {
+    color: #6c757d;
+    margin-bottom: 2rem;
+  }
+  
+  .form-group {
+    margin-bottom: 1.5rem;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    color: #495057;
+  }
+  
+  input[type="text"],
+  input[type="email"],
+  input[type="password"] {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1px solid #ced4da;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+  }
+  
+  input[type="text"]:focus,
+  input[type="email"]:focus,
+  input[type="password"]:focus {
+    border-color: #4c23ae;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(76, 35, 174, 0.1);
+  }
+  
+  .form-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+  }
+  
+  .remember-me {
+    display: flex;
+    align-items: center;
+  }
+  
+  .remember-me input {
+    margin-right: 0.5rem;
+  }
+  
+  .forgot-password {
+    color: #4c23ae;
+    text-decoration: none;
+    font-size: 0.875rem;
+  }
+  
+  .forgot-password:hover {
+    text-decoration: underline;
+  }
+  
+  .btn-submit {
+    background: linear-gradient(45deg, #4c23ae, #007bff);
+    color: white;
+    border: none;
+    padding: 0.75rem;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s;
+    margin-bottom: 1.5rem;
+    width: 100%;
+  }
+  
+  .btn-submit:hover {
+    background: linear-gradient(45deg, #3b1b8e, #0056b3);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Estilos para login social */
+  .social-login {
+    text-align: center;
+    margin-top: 1.5rem;
+  }
+  
+  .social-login p {
+    color: #6c757d;
+    margin-bottom: 1rem;
+    position: relative;
+  }
+  
+  .social-login p::before,
+  .social-login p::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    width: 30%;
+    height: 1px;
+    background-color: #dee2e6;
+  }
+  
+  .social-login p::before {
+    left: 0;
+  }
+  
+  .social-login p::after {
+    right: 0;
+  }
+  
+  .social-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+  }
+  
+  .social-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #dee2e6;
+    background-color: white;
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+  
+  .social-btn svg {
+    width: 20px;
+    height: 20px;
+  }
+  
+  .social-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Estilos para o checkbox de termos */
+  .terms-checkbox {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 1.5rem;
+  }
+  
+  .terms-checkbox input {
+    margin-right: 0.5rem;
+    margin-top: 0.25rem;
+  }
+  
+  .terms-checkbox label {
+    font-size: 0.875rem;
+    color: #6c757d;
+  }
+  
+  .terms-checkbox a {
+    color: #4c23ae;
+    text-decoration: none;
+  }
+  
+  .terms-checkbox a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Estilos para o texto de alternância de modo (visível apenas em mobile) */
+  .toggle-mode-mobile {
+    display: none;
+    text-align: center;
+    margin-top: 1.5rem;
+    color: #6c757d;
+  }
+  
+  .toggle-mode-mobile button {
+    background: none;
+    border: none;
+    color: #4c23ae;
+    font-weight: 600;
+    cursor: pointer;
+    padding: 0;
+    font-size: inherit;
+  }
+  
+  .toggle-mode-mobile button:hover {
+    text-decoration: underline;
+  }
+  
+  /* Link para voltar à página inicial */
+  .home-link {
+    position: absolute;
+    top: 2rem;
+    left: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #495057;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s;
+  }
+  
+  .home-link:hover {
+    color: #4c23ae;
+  }
+  
+  .home-link svg {
+    width: 1rem;
+    height: 1rem;
+  }
+  
+  /* Responsividade */
+  @media (max-width: 768px) {
+    .auth-card {
+      flex-direction: column;
+      max-width: 500px;
+    }
+  
+    .auth-panel {
+      width: 100%;
+    }
+  
+    .image-panel {
+      height: 200px;
+      order: -1;
+    }
+  
+    .login-mode .image-panel,
+    .register-mode .image-panel {
+      transform: translateX(0);
+    }
+  
+    .login-mode .form-panel,
+    .register-mode .form-panel {
+      transform: translateX(0);
+    }
+  
+    .toggle-mode-mobile {
+      display: block;
+    }
+  
+    .btn-toggle {
+      display: none;
+    }
+  }
+  
+  
